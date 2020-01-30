@@ -1,0 +1,97 @@
+
+Java
+package com.example.myapplicationhh;
+
+import android.os.Bundle;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void multiply(View view) {
+        EditText firstValue = findViewById(R.id.firstValue);
+        EditText secondValue = findViewById(R.id.secondValue);
+        TextView answer = findViewById(R.id.answer);
+        String first = firstValue.getText().toString();
+        String second = secondValue.getText().toString();
+        double answerVa1 = Double.parseDouble(first) *
+                Double.parseDouble(second);
+        answer.setText("Answer: " + answerVa1);
+    }
+}
+
+
+
+
+
+
+
+Xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        />
+
+    <EditText
+        android:id="@+id/firstValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First value"
+        />
+
+    <EditText
+        android:id="@+id/secondValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Second value"
+        android:textColor="@color/colorAccent"
+        />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="@color/colorAccent"
+            android:onClick="multiply"
+/>
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="375dp"
+        android:layout_height="62dp"
+        android:hint="Answer"/>
+
+
+
+</LinearLayout>
